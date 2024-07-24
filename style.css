@@ -26,30 +26,47 @@ body::before {
     opacity: 0.4;
 }
 
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* Evita el desbordamiento horizontal */
+}
+
 .container {
-    width: 1200px;
-    height: 600px;
+    width: 80%;
+    max-width: 1200px;
+    height: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     border-radius: 24px;
     border: 1px solid #1875E8;
     box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
     background-image: url("img/Ruido.png");
-    background-size: 100% 100%;
+    background-size: cover;
+    padding: 1rem;
     position: relative;
+    gap: 1rem;
 }
 
 .container__contenido {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    position: absolute;
-    bottom: 0;
+    width: 100%;
 }
 
 .container__informaciones {
-    flex: 1;
-    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    /* Ajusta este valor según sea necesario */
+    box-sizing: border-box;
 }
 
 .container__boton {
@@ -57,10 +74,17 @@ body::before {
     background: #1875E8;
     padding: 16px 24px;
     width: 100%;
+    max-width: 400px;
+    /* Debe coincidir con el max-width de container__informaciones */
     font-size: 24px;
     font-weight: 700;
     border: none;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    /* Espacio entre los botones */
+    text-align: center;
+    color: white;
+    /* Para que el texto de los botones sea visible */
+    box-sizing: border-box;
 }
 
 .container__boton:disabled {
@@ -78,7 +102,7 @@ body::before {
 .container__input {
     width: 100%;
     height: 72px;
-    border-radius: 16px;
+    border-radius: 16px 24px;
     background-color: #FFF;
     border: none;
     color: #1875E8;
@@ -86,16 +110,19 @@ body::before {
     font-size: 24px;
     font-weight: 700;
     font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+
 }
 
 .container__botones {
     display: flex;
     gap: 2em;
+    justify-content: center;
 }
 
 h1 {
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 75px;
+    font-size: 55px;
     text-align: center;
     color: transparent;
     -webkit-text-stroke: 4px #d6f4f4;
@@ -121,7 +148,7 @@ button {
 }
 
 .texto__parrafo {
-    font-size: 32px;
+    font-size: 20px;
     font-weight: 400;
 }
 
@@ -132,12 +159,14 @@ button {
     background-position: top left;
     -webkit-background-clip: text;
     color: transparent;
-    font-size: 45px;
+    font-size: 32px;
     font-weight: bold;
     font-family: 'Chakra Petch', sans-serif;
 }
 
 .container__imagen-persona {
+    max-width: 100%;
+    height: auto;
     transition: opacity 0.5s;
 }
 
@@ -166,5 +195,43 @@ button {
 
     100% {
         opacity: 0;
+    }
+}
+
+/* Media Queries */
+
+
+
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        height: 600px;
+    }
+
+    .container__contenido {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .container__informaciones {
+        text-align: left;
+        padding: 3rem;
+    }
+
+    .container__input {
+        width: 60%;
+    }
+
+    .container__boton {
+        width: auto;
+    }
+
+    .h1 {
+        font-size: 75px;
+    }
+
+    .texto__parrafo {
+        font-size: 32px;
     }
 }

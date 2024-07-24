@@ -3,6 +3,34 @@ let intentos = 0;
 let numeroMaximo = 20;
 let juegoTerminado = false;
 
+let audioSuspenso;
+let audioGanar;
+let audioPerder;
+
+function cargarAudios() {
+  audioSuspenso = document.getElementById("audioSuspenso");
+  audioGanar = document.getElementById("audioGanar");
+  audioPerder = document.getElementById("audioPerder");
+}
+
+function reproducirAudio(audio) {
+  detenerTodosLosAudios();
+  audio
+    .play()
+    .catch((error) => console.error("Error al reproducir el audio:", error));
+}
+
+function detenerAudio(audio) {
+  audio.pause();
+  audio.currentTime = 0;
+}
+
+function detenerTodosLosAudios() {
+  detenerAudio(audioSuspenso);
+  detenerAudio(audioGanar);
+  detenerAudio(audioPerder);
+}
+
 function asignarTextoElemento(elemento, texto) {
   let elementoHTML = document.querySelector(elemento);
   elementoHTML.innerHTML = texto;
@@ -12,6 +40,8 @@ function verificarIntento() {
   if (juegoTerminado) {
     return;
   }
+
+  reproducirAudio(audioSuspenso);
 
   let numeroDeUsuario = parseInt(document.getElementById("valorUsuario").value);
 
@@ -36,6 +66,7 @@ function verificarIntento() {
       .classList.add("texto__parrafo-special");
     startMatrixEffect();
     finalizarJuego();
+    reproducirAudio(audioGanar);
     return;
   }
 
@@ -61,6 +92,8 @@ function verificarIntento() {
     cambiarImagen("./img/ia_sad.png");
     startMatrixEffect();
     finalizarJuego();
+    reproducirAudio(audioPerder);
+    return;
   }
 
   limpiarCaja();
@@ -91,6 +124,7 @@ function finalizarJuego() {
   juegoTerminado = true;
   document.getElementById("reiniciar").disabled = false;
   document.getElementById("intentar").disabled = true;
+  detenerTodosLosAudios();
 }
 
 function reiniciarJuego() {
@@ -109,6 +143,7 @@ function reiniciarJuego() {
     .querySelector(".texto__parrafo")
     .classList.remove("texto__parrafo-special");
   limpiarCaja();
+  reproducirAudio(audioSuspenso);
 }
 
 function startMatrixEffect() {
@@ -167,6 +202,9 @@ function condicionesIniciales() {
   );
   numeroSecreto = generarNumeroSecreto();
   intentos = 0;
+  cargarAudios();
 }
 
 condicionesIniciales();
+
+

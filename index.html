@@ -25,7 +25,7 @@
             type="number"
             id="valorUsuario"
             min="1"
-            max="10"
+            max="20"
             class="container__input"
           />
           <div class="chute container__botones">
@@ -55,6 +55,18 @@
         <canvas id="matrixCanvas" class="matrix-canvas"></canvas>
       </div>
     </div>
+
+    <audio
+      id="audioSuspenso"
+      src="./music/ns_supenso.mp3"
+      preload="auto"
+    ></audio>
+    <audio id="audioGanar" src="./music/ns_ganaste.mp3" preload="auto"></audio>
+    <audio
+      id="audioPerder"
+      src="./music/ns_perdiste.mp3"
+      preload="auto"
+    ></audio>
 
     <script src="app.js"></script>
   </body>
