@@ -198,9 +198,7 @@ button {
     }
 }
 
-/* Media Queries */
-
-
+/* Media Queries  de diferentes equipos*/
 
 
 @media (min-width: 768px) {
@@ -233,5 +231,213 @@ button {
 
     .texto__parrafo {
         font-size: 32px;
+    }
+}
+
+/* Tecno Spark 20 Pro+ (2400 x 1080) */
+@media (min-width: 360px) and (max-width: 800px) {
+    .container {
+        width: 85%;
+        padding: 1rem;
+    }
+
+    .container__boton {
+        font-size: 22px;
+        padding: 14px 20px;
+    }
+
+    .container__input {
+        font-size: 22px;
+        height: 64px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    .texto__parrafo {
+        font-size: 18px;
+    }
+}
+
+/* Infinix Zero Ultra (2800 x 1260) */
+@media (min-width: 360px) and (max-width: 800px) {
+    .container {
+        width: 85%;
+        padding: 1rem;
+    }
+
+    .container__boton {
+        font-size: 22px;
+        padding: 14px 20px;
+    }
+
+    .container__input {
+        font-size: 22px;
+        height: 64px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    .texto__parrafo {
+        font-size: 18px;
+    }
+}
+
+/* Motorola Edge 40 Pro (2400 x 1080) */
+@media (min-width: 360px) and (max-width: 800px) {
+    .container {
+        width: 85%;
+        padding: 1rem;
+    }
+
+    .container__boton {
+        font-size: 22px;
+        padding: 14px 20px;
+    }
+
+    .container__input {
+        font-size: 22px;
+        height: 64px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    .texto__parrafo {
+        font-size: 18px;
+    }
+}
+
+/* Samsung Galaxy S24 Ultra (3088 x 1440) */
+@media (min-width: 800px) and (max-width: 1200px) {
+    .container {
+        width: 80%;
+        padding: 1.5rem;
+    }
+
+    .container__boton {
+        font-size: 24px;
+        padding: 16px 24px;
+    }
+
+    .container__input {
+        font-size: 24px;
+        height: 68px;
+    }
+
+    h1 {
+        font-size: 55px;
+    }
+
+    .texto__parrafo {
+        font-size: 20px;
+    }
+}
+
+/* Google Pixel 8 Pro, OnePlus 12, Xiaomi 14 Pro, Oppo Find X6 Pro */
+@media (min-width: 370px) and (max-width: 800px) {
+    .container {
+        width: 85%;
+        padding: 1rem;
+    }
+
+    .container__boton {
+        font-size: 22px;
+        padding: 14px 20px;
+    }
+
+    .container__input {
+        font-size: 22px;
+        height: 64px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    .texto__parrafo {
+        font-size: 18px;
+    }
+}
+
+/* Sony Xperia 1 V (3840 x 1644) */
+@media (min-width: 1200px) {
+    .container {
+        width: 75%;
+        padding: 2rem;
+    }
+
+    .container__boton {
+        font-size: 26px;
+        padding: 18px 28px;
+    }
+
+    .container__input {
+        font-size: 26px;
+        height: 72px;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
+    .texto__parrafo {
+        font-size: 22px;
+    }
+}
+
+/* Resoluciones más altas y dispositivos de gama alta (p.ej., iPhone 15 Pro Max, Samsung Galaxy S24 Ultra, Sony Xperia 1 V) */
+@media (min-width: 800px) {
+    .container {
+        width: 80%;
+        padding: 1.5rem;
+    }
+
+    .container__boton {
+        font-size: 24px;
+        padding: 16px 24px;
+    }
+
+    .container__input {
+        font-size: 24px;
+        height: 68px;
+    }
+
+    h1 {
+        font-size: 55px;
+    }
+
+    .texto__parrafo {
+        font-size: 20px;
+    }
+}
+
+/* Samsung Galaxy S9 (2960 x 1440) */
+@media (max-width: 320px) and (max-height: 658px) {
+    .container {
+        width: 90%;
+        padding: 0.5rem;
+    }
+
+    .container__boton {
+        font-size: 20px;
+        padding: 12px 16px;
+    }
+
+    .container__input {
+        font-size: 20px;
+        height: 60px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .texto__parrafo {
+        font-size: 16px;
     }
 }
